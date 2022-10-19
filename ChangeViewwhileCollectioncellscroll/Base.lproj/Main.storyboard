@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChangeViewwhileCollectioncellscroll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-rx-5k0">
+                                <rect key="frame" x="0.0" y="47" width="374" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xr4-rk-I8i">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="MFg-mE-Pyd" customClass="CollectionViewCell" customModule="ChangeViewwhileCollectioncellscroll" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="3" width="274" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a5C-iC-0DZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="274" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLK-hL-a6f">
+                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="124"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iLK-hL-a6f" firstAttribute="top" secondItem="a5C-iC-0DZ" secondAttribute="top" id="5Qq-Kx-qsx"/>
+                                                <constraint firstItem="iLK-hL-a6f" firstAttribute="leading" secondItem="a5C-iC-0DZ" secondAttribute="leading" id="Djn-Xs-4kV"/>
+                                                <constraint firstAttribute="trailing" secondItem="iLK-hL-a6f" secondAttribute="trailing" id="nlM-LX-Ut4"/>
+                                                <constraint firstAttribute="bottom" secondItem="iLK-hL-a6f" secondAttribute="bottom" id="srw-ii-xTb"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="274" height="124"/>
+                                        <connections>
+                                            <outlet property="viewCV" destination="iLK-hL-a6f" id="bfe-6E-AJe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="c61-0a-2UW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="057-je-qw1"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IsA-rx-5k0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a6g-Xb-bpW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IsA-rx-5k0" secondAttribute="bottom" constant="633" id="c0R-RG-8b3"/>
+                            <constraint firstItem="IsA-rx-5k0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cWi-Gx-cWn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IsA-rx-5k0" secondAttribute="trailing" constant="16" id="oxS-Q1-S5a"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cv" destination="IsA-rx-5k0" id="JWu-F0-dDk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="101.53846153846153" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
